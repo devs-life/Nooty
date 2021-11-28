@@ -1,0 +1,6 @@
+framework module Pods_Nooty {
+  umbrella header "Pods-Nooty-umbrella.h"
+
+  export *
+  module * { export * }
+}

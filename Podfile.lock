@@ -1,0 +1,18 @@
+PODS:
+  - CHTCollectionViewWaterfallLayout (0.9.8):
+    - CHTCollectionViewWaterfallLayout/ObjC (= 0.9.8)
+  - CHTCollectionViewWaterfallLayout/ObjC (0.9.8)
+
+DEPENDENCIES:
+  - CHTCollectionViewWaterfallLayout
+
+SPEC REPOS:
+  trunk:
+    - CHTCollectionViewWaterfallLayout
+
+SPEC CHECKSUMS:
+  CHTCollectionViewWaterfallLayout: 5f241d2480ab4939aa0d1ad4981de9eef1fbe60d
+
+PODFILE CHECKSUM: 60c035512b9f1a6fdf10e3b07b3f1014bb2defb9
+
+COCOAPODS: 1.11.2
