@@ -10,15 +10,23 @@
 		2D975B292751449E0088D706 /* NootyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D975B282751449E0088D706 /* NootyApp.swift */; };
 		2D975B2D2751449F0088D706 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D975B2C2751449F0088D706 /* Assets.xcassets */; };
 		2D975B302751449F0088D706 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D975B2F2751449F0088D706 /* Preview Assets.xcassets */; };
-		2D975B37275144C60088D706 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D975B36275144C60088D706 /* ViewController.swift */; };
+		2D975B37275144C60088D706 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D975B36275144C60088D706 /* NotesViewController.swift */; };
+		2DFF07D1275297A500A91A15 /* NoteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF07D0275297A500A91A15 /* NoteCollectionViewCell.swift */; };
+		2DFF07D427529C5900A91A15 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF07D327529C5900A91A15 /* Extensions.swift */; };
+		A3ECA278DE9C5E61460C808E /* Pods_Nooty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBBF14804DA7D51695FBE69 /* Pods_Nooty.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		142DC354CDE399CD5B48BEDA /* Pods-Nooty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nooty.debug.xcconfig"; path = "Target Support Files/Pods-Nooty/Pods-Nooty.debug.xcconfig"; sourceTree = "<group>"; };
 		2D975B252751449E0088D706 /* Nooty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nooty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D975B282751449E0088D706 /* NootyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NootyApp.swift; sourceTree = "<group>"; };
 		2D975B2C2751449F0088D706 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D975B2F2751449F0088D706 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2D975B36275144C60088D706 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2D975B36275144C60088D706 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		2DFF07D0275297A500A91A15 /* NoteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionViewCell.swift; sourceTree = "<group>"; };
+		2DFF07D327529C5900A91A15 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D85583562AB4AE6E923842EB /* Pods-Nooty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nooty.release.xcconfig"; path = "Target Support Files/Pods-Nooty/Pods-Nooty.release.xcconfig"; sourceTree = "<group>"; };
+		EEBBF14804DA7D51695FBE69 /* Pods_Nooty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nooty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +34,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3ECA278DE9C5E61460C808E /* Pods_Nooty.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D6811902752956B00325265 /* NotesModule */ = {
+			isa = PBXGroup;
+			children = (
+				2DFF07CF2752972B00A91A15 /* View */,
+				2DFF07CE2752971A00A91A15 /* Controllers */,
+			);
+			path = NotesModule;
+			sourceTree = "<group>";
+		};
 		2D975B1C2751449E0088D706 = {
 			isa = PBXGroup;
 			children = (
 				2D975B272751449E0088D706 /* Nooty */,
 				2D975B262751449E0088D706 /* Products */,
+				59001FFD0B68D075002C5C13 /* Pods */,
+				B96CEB02BEAD8EBA86C226A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,7 +72,8 @@
 			isa = PBXGroup;
 			children = (
 				2D975B282751449E0088D706 /* NootyApp.swift */,
-				2D975B36275144C60088D706 /* ViewController.swift */,
+				2D6811902752956B00325265 /* NotesModule */,
+				2DFF07D227529C4700A91A15 /* Utils */,
 				2D975B2C2751449F0088D706 /* Assets.xcassets */,
 				2D975B2E2751449F0088D706 /* Preview Content */,
 			);
@@ -67,6 +88,47 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		2DFF07CE2752971A00A91A15 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2D975B36275144C60088D706 /* NotesViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2DFF07CF2752972B00A91A15 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2DFF07D0275297A500A91A15 /* NoteCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2DFF07D227529C4700A91A15 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2DFF07D327529C5900A91A15 /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		59001FFD0B68D075002C5C13 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				142DC354CDE399CD5B48BEDA /* Pods-Nooty.debug.xcconfig */,
+				D85583562AB4AE6E923842EB /* Pods-Nooty.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B96CEB02BEAD8EBA86C226A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EEBBF14804DA7D51695FBE69 /* Pods_Nooty.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +136,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D975B332751449F0088D706 /* Build configuration list for PBXNativeTarget "Nooty" */;
 			buildPhases = (
+				479758885AE53119B80E78B7 /* [CP] Check Pods Manifest.lock */,
 				2D975B212751449E0088D706 /* Sources */,
 				2D975B222751449E0088D706 /* Frameworks */,
 				2D975B232751449E0088D706 /* Resources */,
+				38148F27241576898550B0BF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,13 +196,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		38148F27241576898550B0BF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Nooty/Pods-Nooty-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Nooty/Pods-Nooty-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Nooty/Pods-Nooty-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		479758885AE53119B80E78B7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nooty-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2D975B212751449E0088D706 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D975B37275144C60088D706 /* ViewController.swift in Sources */,
+				2D975B37275144C60088D706 /* NotesViewController.swift in Sources */,
 				2D975B292751449E0088D706 /* NootyApp.swift in Sources */,
+				2DFF07D1275297A500A91A15 /* NoteCollectionViewCell.swift in Sources */,
+				2DFF07D427529C5900A91A15 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +371,7 @@
 		};
 		2D975B342751449F0088D706 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 142DC354CDE399CD5B48BEDA /* Pods-Nooty.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -292,6 +401,7 @@
 		};
 		2D975B352751449F0088D706 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D85583562AB4AE6E923842EB /* Pods-Nooty.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
