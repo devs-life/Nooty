@@ -71,8 +71,6 @@ class NoteCollectionViewCell: UICollectionViewCell {
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-    contentView.backgroundColor = .gray
-    contentView.layer.cornerRadius = 20
     setupView()
     changeTagViewBorderColor()
   }
@@ -82,6 +80,12 @@ class NoteCollectionViewCell: UICollectionViewCell {
   }
   
   private func setupView() {
+    contentView.backgroundColor = .init(named: "lightBlack")
+    contentView.layer.cornerRadius = 20
+    contentView.layer.shadowRadius = 4
+    contentView.layer.shadowOffset = CGSize(width: 0, height: 1)
+    contentView.layer.shadowColor = UIColor.black.cgColor
+    contentView.layer.shadowOpacity = 0.2
     setupTitleLabel()
     setupTagView()
     setupDateLabel()
