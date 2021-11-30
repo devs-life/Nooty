@@ -42,4 +42,14 @@ extension UIView {
       self.widthAnchor.constraint(equalToConstant: widthConstant).isActive = true
     }
   }
+  
+  func centerInView(centerX: NSLayoutXAxisAnchor?, centerY: NSLayoutYAxisAnchor?) {
+    if let centerX = centerX {
+      self.centerXAnchor.constraint(equalTo: centerX).isActive = true
+    }
+    
+    if let centerY = centerY {
+      self.centerYAnchor.constraint(equalTo: centerY).isActive = true
+    }
+  }
 }

@@ -40,13 +40,14 @@ class NotesViewController: UIViewController {
     view.addSubview(notesCollectionView)
     notesCollectionView.translatesAutoresizingMaskIntoConstraints = false
     
-    notesCollectionView.anchor(left: view.leftAnchor, top: view.topAnchor, right: view.rightAnchor, bottom: view.bottomAnchor, paddingLeft: 10, paddingTop: 40, paddingRight: 20, paddingBottom: 10, height: nil, heightConstant: nil, heightMultiplier: nil, width: nil, widthConstant: nil, widthMultiplier: nil)
+    notesCollectionView.anchor(left: view.leftAnchor, top: view.topAnchor, right: view.rightAnchor, bottom: view.bottomAnchor, paddingLeft: 10, paddingTop: 40, paddingRight: 20, paddingBottom: 0, height: nil, heightConstant: nil, heightMultiplier: nil, width: nil, widthConstant: nil, widthMultiplier: nil)
   }
 }
 
 extension NotesViewController: UICollectionViewDataSource, UICollectionViewDelegate, CHTCollectionViewDelegateWaterfallLayout {
+  
   func collectionView(_ collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, sizeForItemAt indexPath: IndexPath!) -> CGSize {
-    CGSize(width: view.frame.size.width/2, height: CGFloat.random(in: 200...250))
+    CGSize(width: view.frame.size.width/2, height: CGFloat.random(in: 200...280))
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -54,13 +55,22 @@ extension NotesViewController: UICollectionViewDataSource, UICollectionViewDeleg
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NoteCollectionViewCell.identifier, for: indexPath) as? NoteCollectionViewCell else { return UICollectionViewCell() }
+    
+    guard let cell = collectionView.dequeueReusableCell(
+      withReuseIdentifier: NoteCollectionViewCell.identifier,
+      for: indexPath
+    ) as? NoteCollectionViewCell else {
+      return UICollectionViewCell()
+    }
+    
+    cell.titleLabel.text = "Tasks"
     return cell
   }
 }
 
 
-/// Preview
+/// SwiftUI Previews
+#if DEBUG
 struct NotesIntegratedController: UIViewControllerRepresentable {
   
   func makeUIViewController(context: Context) -> NotesViewController {
@@ -83,3 +93,4 @@ struct ViewControllerPreviews: PreviewProvider {
       NotesControllerView()
     }
 }
+#endif
