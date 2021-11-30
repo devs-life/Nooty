@@ -40,7 +40,7 @@ class NotesViewController: UIViewController {
     view.addSubview(notesCollectionView)
     notesCollectionView.translatesAutoresizingMaskIntoConstraints = false
     
-    notesCollectionView.anchor(left: view.leftAnchor, top: view.topAnchor, right: view.rightAnchor, bottom: view.bottomAnchor, paddingLeft: 10, paddingTop: 40, paddingRight: 20, paddingBottom: 0, height: nil, heightConstant: nil, heightMultiplier: nil, width: nil, widthConstant: nil, widthMultiplier: nil)
+    notesCollectionView.anchor(left: view.leftAnchor, top: view.topAnchor, right: view.rightAnchor, bottom: view.bottomAnchor, paddingLeft: 10, paddingTop: 40, paddingRight: 20, paddingBottom: 0)
   }
 }
 
