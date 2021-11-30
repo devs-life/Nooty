@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIView {
-  func anchor(left: NSLayoutXAxisAnchor?, top: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, paddingLeft: CGFloat, paddingTop: CGFloat, paddingRight: CGFloat, paddingBottom: CGFloat, height: NSLayoutDimension?, heightConstant: CGFloat?, heightMultiplier: CGFloat?, width: NSLayoutDimension?, widthConstant: CGFloat?, widthMultiplier: CGFloat?) {
+  func anchor(left: NSLayoutXAxisAnchor?, top: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, paddingLeft: CGFloat, paddingTop: CGFloat, paddingRight: CGFloat, paddingBottom: CGFloat) {
     
     if let top = top {
       self.topAnchor.constraint(equalTo: top, constant: paddingTop).isActive = true
@@ -25,7 +25,9 @@ extension UIView {
     if let right = right {
       self.rightAnchor.constraint(equalTo: right, constant: -paddingRight).isActive = true
     }
-    
+  }
+  
+  func anchorHeightAndWidth(height: NSLayoutDimension?, heightConstant: CGFloat?, heightMultiplier: CGFloat?, width: NSLayoutDimension?, widthConstant: CGFloat?, widthMultiplier: CGFloat?) {
     if let height = height {
       self.heightAnchor.constraint(equalTo: height, multiplier: heightMultiplier ?? 1).isActive = true
     }
@@ -40,6 +42,16 @@ extension UIView {
     
     if let widthConstant = widthConstant {
       self.widthAnchor.constraint(equalToConstant: widthConstant).isActive = true
+    }
+  }
+  
+  func centerInView(centerX: NSLayoutXAxisAnchor?, centerY: NSLayoutYAxisAnchor?) {
+    if let centerX = centerX {
+      self.centerXAnchor.constraint(equalTo: centerX).isActive = true
+    }
+    
+    if let centerY = centerY {
+      self.centerYAnchor.constraint(equalTo: centerY).isActive = true
     }
   }
 }
