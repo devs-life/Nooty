@@ -44,6 +44,7 @@
 		2D6811902752956B00325265 /* NotesModule */ = {
 			isa = PBXGroup;
 			children = (
+				2DA9713A275695CE007273AD /* Model */,
 				2DFF07CF2752972B00A91A15 /* View */,
 				2DFF07CE2752971A00A91A15 /* Controllers */,
 			);
@@ -86,6 +87,13 @@
 				2D975B2F2751449F0088D706 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2DA9713A275695CE007273AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		2DFF07CE2752971A00A91A15 /* Controllers */ = {

@@ -11,15 +11,19 @@ import CHTCollectionViewWaterfallLayout
 
 class NotesViewController: UIViewController {
   
+  private let heights: [CGFloat] = [220, 260, 236, 240, 256, 270, 224, 240, 236, 240, 256,]
+  
   private let notesCollectionView: UICollectionView = {
     let layout = CHTCollectionViewWaterfallLayout()
     layout.itemRenderDirection = .leftToRight
     layout.columnCount = 2
     layout.minimumInteritemSpacing = 15
+    layout.minimumColumnSpacing = 18
     
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
     
     collectionView.showsVerticalScrollIndicator = false
+    collectionView.backgroundColor = .systemBackground
     collectionView.register(
       NoteCollectionViewCell.self,
       forCellWithReuseIdentifier: NoteCollectionViewCell.identifier
@@ -30,6 +34,12 @@ class NotesViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .systemBackground
+    title = "Notes"
+    navigationController?.navigationBar.prefersLargeTitles = true
+    setupView()
+  }
+  
+  private func setupView() {
     setupCollectionView()
   }
   
@@ -40,46 +50,60 @@ class NotesViewController: UIViewController {
     view.addSubview(notesCollectionView)
     notesCollectionView.translatesAutoresizingMaskIntoConstraints = false
     
-    notesCollectionView.anchor(left: view.leftAnchor, top: view.topAnchor, right: view.rightAnchor, bottom: view.bottomAnchor, paddingLeft: 10, paddingTop: 40, paddingRight: 20, paddingBottom: 10, height: nil, heightConstant: nil, heightMultiplier: nil, width: nil, widthConstant: nil, widthMultiplier: nil)
+    notesCollectionView.anchor(left: view.leftAnchor, top: view.topAnchor, right: view.rightAnchor, bottom: view.bottomAnchor, paddingLeft: 16, paddingTop: 40, paddingRight: 16, paddingBottom: 0)
   }
 }
 
 extension NotesViewController: UICollectionViewDataSource, UICollectionViewDelegate, CHTCollectionViewDelegateWaterfallLayout {
+  
   func collectionView(_ collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, sizeForItemAt indexPath: IndexPath!) -> CGSize {
-    CGSize(width: view.frame.size.width/2, height: CGFloat.random(in: 200...250))
+    CGSize(width: view.frame.size.width/2, height: heights[indexPath.item])
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    20
+    heights.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NoteCollectionViewCell.identifier, for: indexPath) as? NoteCollectionViewCell else { return UICollectionViewCell() }
+    
+    guard let cell = collectionView.dequeueReusableCell(
+      withReuseIdentifier: NoteCollectionViewCell.identifier,
+      for: indexPath
+    ) as? NoteCollectionViewCell else {
+      return UICollectionViewCell()
+    }
+    
+    cell.titleLabel.text = "Tasks"
     return cell
   }
 }
 
 
-/// Preview
+/// SwiftUI Previews
+#if DEBUG
 struct NotesIntegratedController: UIViewControllerRepresentable {
   
-  func makeUIViewController(context: Context) -> NotesViewController {
-    return NotesViewController()
+  func makeUIViewController(context: Context) -> UINavigationController {
+    return UINavigationController(rootViewController: NotesViewController())
   }
   
-  func updateUIViewController(_ uiViewController: NotesViewController, context: Context) {
+  func updateUIViewController(_ uiViewController: UINavigationController, context: Context) {
     
   }
 }
 
 struct NotesControllerView: View {
-    var body: some View {
-      NotesIntegratedController().ignoresSafeArea(.all)
-    }
+  var body: some View {
+    NotesIntegratedController().ignoresSafeArea(.all)
+  }
 }
 
 struct ViewControllerPreviews: PreviewProvider {
-    static var previews: some View {
-      NotesControllerView()
+  static var previews: some View {
+    Group {
+      NotesControllerView().colorScheme(.light)
+      NotesControllerView().colorScheme(.dark)
     }
+  }
 }
+#endif
