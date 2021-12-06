@@ -8,22 +8,22 @@
 import UIKit
 
 extension UIView {
-  func anchor(left: NSLayoutXAxisAnchor?, top: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, paddingLeft: CGFloat, paddingTop: CGFloat, paddingRight: CGFloat, paddingBottom: CGFloat) {
+  func anchor(left: NSLayoutXAxisAnchor?, top: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, paddingLeft: CGFloat?, paddingTop: CGFloat?, paddingRight: CGFloat?, paddingBottom: CGFloat?) {
     
     if let top = top {
-      self.topAnchor.constraint(equalTo: top, constant: paddingTop).isActive = true
+      self.topAnchor.constraint(equalTo: top, constant: (paddingTop ?? 0)).isActive = true
     }
     
     if let left = left {
-      self.leftAnchor.constraint(equalTo: left, constant: paddingLeft).isActive = true
+      self.leadingAnchor.constraint(equalTo: left, constant: (paddingLeft ?? 0)).isActive = true
     }
     
     if let bottom = bottom {
-      self.bottomAnchor.constraint(equalTo: bottom, constant: -paddingBottom).isActive = true
+      self.bottomAnchor.constraint(equalTo: bottom, constant: -(paddingBottom ?? 0)).isActive = true
     }
     
     if let right = right {
-      self.rightAnchor.constraint(equalTo: right, constant: -paddingRight).isActive = true
+      self.trailingAnchor.constraint(equalTo: right, constant: -(paddingRight ?? 0)).isActive = true
     }
   }
   
