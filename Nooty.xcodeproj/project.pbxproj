@@ -14,6 +14,7 @@
 		2DFF07D1275297A500A91A15 /* NoteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF07D0275297A500A91A15 /* NoteCollectionViewCell.swift */; };
 		2DFF07D427529C5900A91A15 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF07D327529C5900A91A15 /* Extensions.swift */; };
 		A3ECA278DE9C5E61460C808E /* Pods_Nooty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBBF14804DA7D51695FBE69 /* Pods_Nooty.framework */; };
+		B97105DB2753CE9D007D5728 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97105DA2753CE9D007D5728 /* AuthVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,8 @@
 		2D975B36275144C60088D706 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		2DFF07D0275297A500A91A15 /* NoteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionViewCell.swift; sourceTree = "<group>"; };
 		2DFF07D327529C5900A91A15 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B97105DA2753CE9D007D5728 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
+		B97105DC2753D11C007D5728 /* Nooty.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nooty.entitlements; sourceTree = "<group>"; };
 		D85583562AB4AE6E923842EB /* Pods-Nooty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nooty.release.xcconfig"; path = "Target Support Files/Pods-Nooty/Pods-Nooty.release.xcconfig"; sourceTree = "<group>"; };
 		EEBBF14804DA7D51695FBE69 /* Pods_Nooty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nooty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -72,7 +75,9 @@
 		2D975B272751449E0088D706 /* Nooty */ = {
 			isa = PBXGroup;
 			children = (
+				B97105DC2753D11C007D5728 /* Nooty.entitlements */,
 				2D975B282751449E0088D706 /* NootyApp.swift */,
+				B97105D72753CE3C007D5728 /* AuthModule */,
 				2D6811902752956B00325265 /* NotesModule */,
 				2DFF07D227529C4700A91A15 /* Utils */,
 				2D975B2C2751449F0088D706 /* Assets.xcassets */,
@@ -135,6 +140,30 @@
 				EEBBF14804DA7D51695FBE69 /* Pods_Nooty.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B97105D72753CE3C007D5728 /* AuthModule */ = {
+			isa = PBXGroup;
+			children = (
+				B97105D92753CE52007D5728 /* Controllers */,
+				B97105D82753CE4B007D5728 /* View */,
+			);
+			path = AuthModule;
+			sourceTree = "<group>";
+		};
+		B97105D82753CE4B007D5728 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B97105D92753CE52007D5728 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B97105DA2753CE9D007D5728 /* AuthVC.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B97105DB2753CE9D007D5728 /* AuthVC.swift in Sources */,
 				2D975B37275144C60088D706 /* NotesViewController.swift in Sources */,
 				2D975B292751449E0088D706 /* NootyApp.swift in Sources */,
 				2DFF07D1275297A500A91A15 /* NoteCollectionViewCell.swift in Sources */,
@@ -383,10 +413,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Nooty/Nooty.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Nooty/Preview Content\"";
-				DEVELOPMENT_TEAM = 59S6RTNR57;
+				DEVELOPMENT_TEAM = Q659HB4U5Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -399,7 +430,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ajay.Nooty;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devlife.Nooty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -413,10 +444,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Nooty/Nooty.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Nooty/Preview Content\"";
-				DEVELOPMENT_TEAM = 59S6RTNR57;
+				DEVELOPMENT_TEAM = Q659HB4U5Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -429,7 +461,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ajay.Nooty;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devlife.Nooty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
