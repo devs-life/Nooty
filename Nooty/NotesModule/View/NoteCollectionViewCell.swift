@@ -94,13 +94,13 @@ class NoteCollectionViewCell: UICollectionViewCell {
   
   private func setupTitleLabel() {
     addSubview(titleLabel)
-    titleLabel.anchor(left: leftAnchor, top: topAnchor, right: rightAnchor, bottom: nil, paddingLeft: 20, paddingTop: 20, paddingRight: 8, paddingBottom: 0)
+    titleLabel.anchor(left: leadingAnchor, top: topAnchor, right: trailingAnchor, bottom: nil, paddingLeft: 20, paddingTop: 20, paddingRight: 8, paddingBottom: 0)
     titleLabel.anchorHeightAndWidth(height: nil, heightConstant: 20, heightMultiplier: nil, width: nil, widthConstant: nil, widthMultiplier: nil)
   }
   
   private func setupTagView() {
     addSubview(tagView)
-    tagView.anchor(left: leftAnchor, top: nil, right: nil, bottom: bottomAnchor, paddingLeft: 20, paddingTop: 0, paddingRight: 0, paddingBottom: 22)
+    tagView.anchor(left: leadingAnchor, top: nil, right: nil, bottom: bottomAnchor, paddingLeft: 20, paddingTop: 0, paddingRight: 0, paddingBottom: 22)
     
     tagView.anchorHeightAndWidth(height: nil, heightConstant: 24, heightMultiplier: nil, width: widthAnchor, widthConstant: nil, widthMultiplier: 0.33)
     
@@ -111,14 +111,14 @@ class NoteCollectionViewCell: UICollectionViewCell {
   private func setupDateLabel() {
     addSubview(dateLabel)
     
-    dateLabel.anchor(left: nil, top: nil, right: rightAnchor, bottom: bottomAnchor, paddingLeft: 0, paddingTop: 0, paddingRight: 17, paddingBottom: 26.5)
+    dateLabel.anchor(left: nil, top: nil, right: trailingAnchor, bottom: bottomAnchor, paddingLeft: 0, paddingTop: 0, paddingRight: 17, paddingBottom: 26.5)
     
     dateLabel.anchorHeightAndWidth(height: nil, heightConstant: nil, heightMultiplier: nil, width: widthAnchor, widthConstant: nil, widthMultiplier: 0.44)
   }
   
   private func setupDescriptionLabel() {
     addSubview(descriptionLabel)
-    descriptionLabel.anchor(left: leftAnchor, top: titleLabel.bottomAnchor, right: rightAnchor, bottom: tagView.topAnchor, paddingLeft: 20, paddingTop: 10, paddingRight: 17, paddingBottom: 10)
+    descriptionLabel.anchor(left: leadingAnchor, top: titleLabel.bottomAnchor, right: trailingAnchor, bottom: tagView.topAnchor, paddingLeft: 20, paddingTop: 10, paddingRight: 17, paddingBottom: 10)
   }
   
   private func changeTagViewBorderColor() {

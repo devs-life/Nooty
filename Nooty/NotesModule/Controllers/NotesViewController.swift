@@ -50,7 +50,7 @@ class NotesViewController: UIViewController {
     view.addSubview(notesCollectionView)
     notesCollectionView.translatesAutoresizingMaskIntoConstraints = false
     
-    notesCollectionView.anchor(left: view.leftAnchor, top: view.topAnchor, right: view.rightAnchor, bottom: view.bottomAnchor, paddingLeft: 16, paddingTop: 40, paddingRight: 16, paddingBottom: 0)
+    notesCollectionView.anchor(left: view.leadingAnchor, top: view.topAnchor, right: view.trailingAnchor, bottom: view.bottomAnchor, paddingLeft: 16, paddingTop: 40, paddingRight: 16, paddingBottom: 0)
   }
 }
 
