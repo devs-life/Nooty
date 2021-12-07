@@ -8,7 +8,7 @@
 import UIKit
 
 class SkipSignInView: UIView {
-
+  
   override init(frame: CGRect) {
     super.init(frame: frame)
     configureUI()
@@ -44,5 +44,5 @@ class SkipSignInView: UIView {
     skipBtn.setAttributedTitle(attributeString, for: .normal)
     skipBtn.setTitleColor(.label, for: .normal)
   }
-
+  
 }
