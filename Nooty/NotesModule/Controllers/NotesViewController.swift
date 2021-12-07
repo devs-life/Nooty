@@ -11,13 +11,11 @@ import CHTCollectionViewWaterfallLayout
 
 class NotesViewController: UIViewController {
   
-  private let heights: [CGFloat] = [220, 260, 236, 240, 256, 270, 224, 240, 236, 240, 256,]
-  
   private let notesCollectionView: UICollectionView = {
     let layout = CHTCollectionViewWaterfallLayout()
     layout.itemRenderDirection = .leftToRight
     layout.columnCount = 2
-    layout.minimumInteritemSpacing = 15
+    layout.minimumInteritemSpacing = 18
     layout.minimumColumnSpacing = 18
     
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -57,11 +55,11 @@ class NotesViewController: UIViewController {
 extension NotesViewController: UICollectionViewDataSource, UICollectionViewDelegate, CHTCollectionViewDelegateWaterfallLayout {
   
   func collectionView(_ collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, sizeForItemAt indexPath: IndexPath!) -> CGSize {
-    CGSize(width: view.frame.size.width/2, height: heights[indexPath.item])
+    CGSize(width: view.frame.size.width/2, height: notes[indexPath.item].height)
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    heights.count
+    notes.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
