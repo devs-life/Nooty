@@ -14,6 +14,7 @@
 		2DFF07D1275297A500A91A15 /* NoteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF07D0275297A500A91A15 /* NoteCollectionViewCell.swift */; };
 		2DFF07D427529C5900A91A15 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF07D327529C5900A91A15 /* Extensions.swift */; };
 		A3ECA278DE9C5E61460C808E /* Pods_Nooty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBBF14804DA7D51695FBE69 /* Pods_Nooty.framework */; };
+		B91F6E17275F04850063C1C6 /* SkipSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F6E16275F04850063C1C6 /* SkipSignInView.swift */; };
 		B97105DB2753CE9D007D5728 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97105DA2753CE9D007D5728 /* AuthVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		2D975B36275144C60088D706 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		2DFF07D0275297A500A91A15 /* NoteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionViewCell.swift; sourceTree = "<group>"; };
 		2DFF07D327529C5900A91A15 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B91F6E16275F04850063C1C6 /* SkipSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipSignInView.swift; sourceTree = "<group>"; };
 		B97105DA2753CE9D007D5728 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		B97105DC2753D11C007D5728 /* Nooty.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nooty.entitlements; sourceTree = "<group>"; };
 		D85583562AB4AE6E923842EB /* Pods-Nooty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nooty.release.xcconfig"; path = "Target Support Files/Pods-Nooty/Pods-Nooty.release.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 		B97105D82753CE4B007D5728 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B91F6E16275F04850063C1C6 /* SkipSignInView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				2D975B292751449E0088D706 /* NootyApp.swift in Sources */,
 				2DFF07D1275297A500A91A15 /* NoteCollectionViewCell.swift in Sources */,
 				2DFF07D427529C5900A91A15 /* Extensions.swift in Sources */,
+				B91F6E17275F04850063C1C6 /* SkipSignInView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
