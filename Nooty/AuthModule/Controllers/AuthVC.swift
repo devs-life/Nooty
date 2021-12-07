@@ -12,14 +12,33 @@ import AuthenticationServices
 
 class AuthVC: UIViewController {
   
-  let titleLabel = UILabel()
-  let titleImageView = UIImageView()
-  let descLabel = UILabel()
+  let titleLabel: UILabel = {
+    let label = UILabel()
+    label.text = "Nooty App"
+    label.font = UIFont.systemFont(ofSize: 40, weight: .bold)
+    label.textAlignment = .center
+    return label
+  }()
+  
+  let titleImageView : UIImageView = {
+    let imageView = UIImageView(image: UIImage(systemName: "books.vertical.circle.fill"))
+    imageView.contentMode = .scaleAspectFill
+    imageView.tintColor = .systemPurple
+    return imageView
+  }()
+  
+  let descLabel : UILabel = {
+    let label = UILabel()
+    label.text = "Nooty app to keep your notes nooty"
+    label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+    label.textAlignment = .center
+    return label
+  }()
   let appleSignInBtn = ASAuthorizationAppleIDButton(
     authorizationButtonType: .default,
     authorizationButtonStyle: UITraitCollection.current.userInterfaceStyle == .dark ? .white : .black
   )
-  let skipSignInView = UIView()
+  let skipSignInView = SkipSignInView(frame: .zero)
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -38,42 +57,33 @@ class AuthVC: UIViewController {
   
   private func setupTitleImgView(){
     view.addSubview(titleImageView)
-    titleImageView.translatesAutoresizingMaskIntoConstraints = false
     
     titleImageView.anchor(left: nil, top: view.safeAreaLayoutGuide.topAnchor, right: nil, bottom: nil, paddingLeft: nil, paddingTop: 90, paddingRight: nil, paddingBottom: nil)
     titleImageView.centerInView(centerX: view.centerXAnchor, centerY: nil)
     titleImageView.anchorHeightAndWidth(height: view.heightAnchor, heightConstant: nil, heightMultiplier: 0.22, width: nil, widthConstant: 250, widthMultiplier: nil)
     
-    titleImageView.contentMode = .scaleAspectFill
-    titleImageView.image = UIImage(systemName: "books.vertical.circle.fill")
-    titleImageView.tintColor = .systemPurple
+    
   }
   
   private func setupTitleLabel(){
     view.addSubview(titleLabel)
-    titleLabel.translatesAutoresizingMaskIntoConstraints = false
     
     titleLabel.anchor(left: nil, top: titleImageView.bottomAnchor, right: nil, bottom: nil, paddingLeft: nil, paddingTop: 10, paddingRight: nil, paddingBottom: nil)
     titleLabel.centerInView(centerX: view.centerXAnchor, centerY: nil)
     titleImageView.anchorHeightAndWidth(height: nil, heightConstant: 50, heightMultiplier: nil, width: view.widthAnchor, widthConstant: nil, widthMultiplier: 0.4)
-    titleLabel.text = "Nooty App"
-    titleLabel.font = UIFont.systemFont(ofSize: 40, weight: .bold)
   }
   
   private func setupDescLabel(){
     view.addSubview(descLabel)
-    descLabel.translatesAutoresizingMaskIntoConstraints = false
     
     descLabel.anchor(left: nil, top: titleLabel.bottomAnchor, right: nil, bottom: nil, paddingLeft: nil, paddingTop: 20, paddingRight: nil, paddingBottom: nil)
     descLabel.anchorHeightAndWidth(height: nil, heightConstant: 30, heightMultiplier: nil, width: view.widthAnchor, widthConstant: nil, widthMultiplier: 0.75)
     descLabel.centerInView(centerX: titleLabel.centerXAnchor, centerY: nil)
-    descLabel.text = "Nooty app to keep your notes nooty"
   }
   
   private func setupSOAppleSignIn() {
     //layout apple signin
     view.addSubview(appleSignInBtn)
-    appleSignInBtn.translatesAutoresizingMaskIntoConstraints = false
     appleSignInBtn.anchor(left: nil, top: descLabel.bottomAnchor, right: nil, bottom: nil, paddingLeft: nil, paddingTop: 200, paddingRight: nil, paddingBottom: nil)
     appleSignInBtn.anchorHeightAndWidth(height: nil, heightConstant: 40, heightMultiplier: nil, width: nil, widthConstant: 200, widthMultiplier: nil)
     appleSignInBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -83,39 +93,10 @@ class AuthVC: UIViewController {
   }
   private func setupSkipSignInView(){
     view.addSubview(skipSignInView)
-    skipSignInView.translatesAutoresizingMaskIntoConstraints = false
     skipSignInView.anchor(left: nil, top: appleSignInBtn.bottomAnchor, right: nil, bottom: nil, paddingLeft: nil, paddingTop: 20, paddingRight: nil, paddingBottom: nil)
     
     skipSignInView.anchorHeightAndWidth(height: nil, heightConstant: 40, heightMultiplier: nil, width: nil, widthConstant: 250, widthMultiplier: nil)
     skipSignInView.centerXAnchor.constraint(equalTo: appleSignInBtn.centerXAnchor).isActive = true
-    
-    
-    let skipLabel = UILabel()
-    skipSignInView.addSubview(skipLabel)
-    skipLabel.translatesAutoresizingMaskIntoConstraints = false
-    
-    skipLabel.anchor(left: skipSignInView.leadingAnchor, top: skipSignInView.topAnchor, right: nil, bottom: nil, paddingLeft: 20, paddingTop: 10, paddingRight: nil, paddingBottom: nil)
-    skipLabel.anchorHeightAndWidth(height: nil, heightConstant: 18, heightMultiplier: nil, width: nil, widthConstant: 165, widthMultiplier: nil)
-    skipLabel.text = "Wanna do signin later"
-    
-    let skipBtn = UIButton(type: .system)
-    skipSignInView.addSubview(skipBtn)
-    skipBtn.translatesAutoresizingMaskIntoConstraints = false
-    
-    skipBtn.anchorHeightAndWidth(height: nil, heightConstant: 16, heightMultiplier: nil, width: nil, widthConstant: nil, widthMultiplier: nil)
-    skipBtn.anchor(left: skipLabel.trailingAnchor, top: skipSignInView.topAnchor, right: skipSignInView.trailingAnchor, bottom: nil, paddingLeft: -15, paddingTop: 12, paddingRight: 0, paddingBottom: nil)
-    skipBtn.setTitle("Skip it", for: .normal)
-    
-    let attributes: [NSAttributedString.Key: Any] = [
-      .font: UIFont.systemFont(ofSize: 14),
-      .foregroundColor: UIColor.label,
-      .underlineStyle: NSUnderlineStyle.single.rawValue
-    ]
-    let attributeString = NSMutableAttributedString(
-      string: "Skip it",
-      attributes: attributes)
-    skipBtn.setAttributedTitle(attributeString, for: .normal)
-    skipBtn.setTitleColor(.label, for: .normal)
     
   }
   
