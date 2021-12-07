@@ -9,7 +9,7 @@ import UIKit
 
 extension UIView {
   func anchor(left: NSLayoutXAxisAnchor?, top: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, paddingLeft: CGFloat?, paddingTop: CGFloat?, paddingRight: CGFloat?, paddingBottom: CGFloat?) {
-    
+    self.translatesAutoresizingMaskIntoConstraints = false
     if let top = top {
       self.topAnchor.constraint(equalTo: top, constant: (paddingTop ?? 0)).isActive = true
     }
@@ -46,6 +46,7 @@ extension UIView {
   }
   
   func centerInView(centerX: NSLayoutXAxisAnchor?, centerY: NSLayoutYAxisAnchor?) {
+    self.translatesAutoresizingMaskIntoConstraints = false
     if let centerX = centerX {
       self.centerXAnchor.constraint(equalTo: centerX).isActive = true
     }
