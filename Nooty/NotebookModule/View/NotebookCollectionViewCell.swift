@@ -8,6 +8,7 @@
 import UIKit
 
 class NotebookCollectionViewCell: UICollectionViewCell {
+  static let identifier = "NotebookCollectionViewCell"
   
   let titleLabel: UILabel = {
     let label = UILabel()
@@ -22,6 +23,7 @@ class NotebookCollectionViewCell: UICollectionViewCell {
     let imageView = UIImageView()
     imageView.contentMode = .scaleAspectFill
     imageView.clipsToBounds = true
+    imageView.image = UIImage(named: "notebook")
     return imageView
   }()
    
@@ -46,7 +48,7 @@ class NotebookCollectionViewCell: UICollectionViewCell {
   }
   private func setupTitleLabel() {
     contentView.addSubview(titleLabel)
-    titleLabel.anchor(left: contentView.leadingAnchor, top: nil, right: contentView.trailingAnchor, bottom: contentView.bottomAnchor, paddingLeft: 20, paddingTop: nil, paddingRight: 20, paddingBottom: 20)
+    titleLabel.anchor(left: contentView.leadingAnchor, top: nil, right: contentView.trailingAnchor, bottom: contentView.bottomAnchor, paddingLeft: 30, paddingTop: nil, paddingRight: 10, paddingBottom: 20)
     titleLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
     titleLabel.anchorHeightAndWidth(height: nil, heightConstant: 18, heightMultiplier: nil, width: nil, widthConstant: nil, widthMultiplier: nil)
   }
@@ -54,7 +56,8 @@ class NotebookCollectionViewCell: UICollectionViewCell {
   private func setupImageView(){
     contentView.addSubview(imageView)
     imageView.translatesAutoresizingMaskIntoConstraints = false
-    imageView.centerInView(centerX: contentView.centerXAnchor, centerY: contentView.centerYAnchor)
-    imageView.anchorHeightAndWidth(height: nil, heightConstant: 70, heightMultiplier: nil, width: nil, widthConstant: 70, widthMultiplier: nil)
+    imageView.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 30).isActive = true
+    imageView.centerInView(centerX: contentView.centerXAnchor, centerY: nil)
+    imageView.anchorHeightAndWidth(height: nil, heightConstant: 90, heightMultiplier: nil, width: nil, widthConstant: 90, widthMultiplier: nil)
   }
 }
