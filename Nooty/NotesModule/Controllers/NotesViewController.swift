@@ -74,6 +74,10 @@ extension NotesViewController: UICollectionViewDataSource, UICollectionViewDeleg
     cell.titleLabel.text = "Tasks"
     return cell
   }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    navigationController?.pushViewController(NoteDetailViewController(), animated: true)
+  }
 }
 
 
