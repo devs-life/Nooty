@@ -14,6 +14,8 @@ class NoteDetailViewController: UIViewController {
     let textView = UITextView()
     textView.translatesAutoresizingMaskIntoConstraints = false
     textView.font = .systemFont(ofSize: 18)
+    textView.text = "Your Note here..."
+    textView.textColor = UIColor.lightGray
     textView.textContainerInset = UIEdgeInsets(top: 4, left: 0, bottom: 4, right: 0)
     return textView
   }()
@@ -21,8 +23,17 @@ class NoteDetailViewController: UIViewController {
   let titleField: UITextField = {
     let tf = UITextField()
     tf.translatesAutoresizingMaskIntoConstraints = false
-    tf.font = .systemFont(ofSize: 22)
+    tf.font = .boldSystemFont(ofSize: 26)
+    tf.placeholder = "Title"
     return tf
+  }()
+  
+  let seperatorView: UIView = {
+    let view = UIView()
+    view.translatesAutoresizingMaskIntoConstraints = false
+    view.backgroundColor = .systemBlue
+    view.layer.cornerRadius = 2
+    return view
   }()
   
   override func viewDidLoad() {
@@ -33,59 +44,98 @@ class NoteDetailViewController: UIViewController {
   private func setupView() {
     view.backgroundColor = .systemBackground
     navigationController?.navigationBar.prefersLargeTitles = false
+    navigationController?.navigationBar.tintColor = UIColor.label
+    setupMoreButton()
+    setupSeperatorView()
     setuptTitleField()
     setupTextView()
   }
   
+  private func setupMoreButton() {
+    let imageIcon = UIImage(systemName: "ellipsis.circle")
+    let b = UIBarButtonItem.init(
+      image: imageIcon,
+      style: .done,
+      target: self,
+      action: #selector(moreAction)
+    )
+    
+    self.navigationItem.rightBarButtonItem = b
+  }
+  
+  private func setupSeperatorView() {
+    view.addSubview(seperatorView)
+    
+    seperatorView.anchor(left: view.leadingAnchor, top: view.safeAreaLayoutGuide.topAnchor, right: nil, bottom: nil, paddingLeft: 10, paddingTop: 10, paddingRight: 0, paddingBottom: 0)
+    seperatorView.anchorHeightAndWidth(height: nil, heightConstant: 50, heightMultiplier: nil, width: nil, widthConstant: 4, widthMultiplier: nil)
+  }
+  
   private func setuptTitleField() {
     view.addSubview(titleField)
+    titleField.centerInView(centerX: nil, centerY: seperatorView.centerYAnchor)
     titleField.anchor(
-      left: view.leadingAnchor,
-      top: view.safeAreaLayoutGuide.topAnchor,
+      left: seperatorView.trailingAnchor,
+      top: nil,
       right: view.trailingAnchor,
       bottom: nil,
-      paddingLeft: 8,
+      paddingLeft: 10,
       paddingTop: 0,
       paddingRight: 8,
       paddingBottom: 0
-    )
-    titleField.anchorHeightAndWidth(
-      height: nil,
-      heightConstant: 30,
-      heightMultiplier: nil,
-      width: nil,
-      widthConstant: nil,
-      widthMultiplier: nil
     )
   }
   
   private func setupTextView() {
     view.addSubview(textView)
+    
     textView.anchor(
       left: view.leadingAnchor,
-      top: titleField.bottomAnchor,
+      top: seperatorView.bottomAnchor,
       right: view.trailingAnchor,
       bottom: view.bottomAnchor,
-      paddingLeft: 8,
-      paddingTop: 0,
+      paddingLeft: 15,
+      paddingTop: 10,
       paddingRight: 8,
       paddingBottom: 0
     )
+    
+    textView.delegate = self
   }
   
+  /// Logic:-
   
+  @objc private func moreAction() {
+    print("morePressed")
+  }
+  
+}
+
+extension NoteDetailViewController: UITextViewDelegate {
+  func textViewDidBeginEditing(_ textView: UITextView) {
+      if textView.textColor == UIColor.lightGray {
+          textView.text = nil
+          textView.textColor = UIColor.label
+      }
+  }
+  
+  func textViewDidEndEditing(_ textView: UITextView) {
+      if textView.text.isEmpty {
+          textView.text = "Your Note here..."
+          textView.textColor = UIColor.lightGray
+      }
+  }
 }
 
 /// SwiftUI Previews
 #if DEBUG
 struct NoteDetailIntegratedController: UIViewControllerRepresentable {
-
+  
   func makeUIViewController(context: Context) -> UINavigationController {
     return UINavigationController(rootViewController: NoteDetailViewController())
   }
-
+  
   func updateUIViewController(_ uiViewController: UINavigationController, context: Context) {
-
+    
   }
 }
 
