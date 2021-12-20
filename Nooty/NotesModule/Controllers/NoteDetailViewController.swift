@@ -31,7 +31,7 @@ class NoteDetailViewController: UIViewController {
   let seperatorView: UIView = {
     let view = UIView()
     view.translatesAutoresizingMaskIntoConstraints = false
-    view.backgroundColor = .systemBlue
+    view.backgroundColor = .purple
     view.layer.cornerRadius = 2
     return view
   }()
@@ -44,7 +44,7 @@ class NoteDetailViewController: UIViewController {
   private func setupView() {
     view.backgroundColor = .systemBackground
     navigationController?.navigationBar.prefersLargeTitles = false
-    navigationController?.navigationBar.tintColor = UIColor.label
+    navigationController?.navigationBar.tintColor = UIColor.systemPurple
     setupMoreButton()
     setupSeperatorView()
     setuptTitleField()
