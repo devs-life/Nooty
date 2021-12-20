@@ -17,7 +17,10 @@
 		2DFF07D427529C5900A91A15 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF07D327529C5900A91A15 /* Extensions.swift */; };
 		A3ECA278DE9C5E61460C808E /* Pods_Nooty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBBF14804DA7D51695FBE69 /* Pods_Nooty.framework */; };
 		B91F6E17275F04850063C1C6 /* SkipSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F6E16275F04850063C1C6 /* SkipSignInView.swift */; };
+		B9343612276123840038C2B3 /* NotebookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9343611276123840038C2B3 /* NotebookCollectionViewCell.swift */; };
+		B93436172761244C0038C2B3 /* NotebooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93436162761244C0038C2B3 /* NotebooksViewController.swift */; };
 		B97105DB2753CE9D007D5728 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97105DA2753CE9D007D5728 /* AuthVC.swift */; };
+		B9F13C23276FA9D000023FBD /* FloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F13C22276FA9D000023FBD /* FloatingActionButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +35,11 @@
 		2DFF07D0275297A500A91A15 /* NoteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionViewCell.swift; sourceTree = "<group>"; };
 		2DFF07D327529C5900A91A15 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B91F6E16275F04850063C1C6 /* SkipSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipSignInView.swift; sourceTree = "<group>"; };
+		B9343611276123840038C2B3 /* NotebookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookCollectionViewCell.swift; sourceTree = "<group>"; };
+		B93436162761244C0038C2B3 /* NotebooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebooksViewController.swift; sourceTree = "<group>"; };
 		B97105DA2753CE9D007D5728 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		B97105DC2753D11C007D5728 /* Nooty.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nooty.entitlements; sourceTree = "<group>"; };
+		B9F13C22276FA9D000023FBD /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
 		D85583562AB4AE6E923842EB /* Pods-Nooty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nooty.release.xcconfig"; path = "Target Support Files/Pods-Nooty/Pods-Nooty.release.xcconfig"; sourceTree = "<group>"; };
 		EEBBF14804DA7D51695FBE69 /* Pods_Nooty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nooty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -84,6 +90,7 @@
 				B97105DC2753D11C007D5728 /* Nooty.entitlements */,
 				2D975B282751449E0088D706 /* NootyApp.swift */,
 				B97105D72753CE3C007D5728 /* AuthModule */,
+				B934360F2761233B0038C2B3 /* NotebookModule */,
 				2D6811902752956B00325265 /* NotesModule */,
 				2DFF07D227529C4700A91A15 /* Utils */,
 				2D975B2C2751449F0088D706 /* Assets.xcassets */,
@@ -140,6 +147,40 @@
 				D85583562AB4AE6E923842EB /* Pods-Nooty.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B934360F2761233B0038C2B3 /* NotebookModule */ = {
+			isa = PBXGroup;
+			children = (
+				B9343615276123FB0038C2B3 /* Controllers */,
+				B93436102761235E0038C2B3 /* Model */,
+				B93436132761238D0038C2B3 /* View */,
+			);
+			path = NotebookModule;
+			sourceTree = "<group>";
+		};
+		B93436102761235E0038C2B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B93436132761238D0038C2B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B9343611276123840038C2B3 /* NotebookCollectionViewCell.swift */,
+				B9F13C22276FA9D000023FBD /* FloatingActionButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B9343615276123FB0038C2B3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B93436162761244C0038C2B3 /* NotebooksViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		B96CEB02BEAD8EBA86C226A0 /* Frameworks */ = {
@@ -295,7 +336,10 @@
 				2D083CC1275F0E1400FAB550 /* Note.swft.swift in Sources */,
 				2D975B292751449E0088D706 /* NootyApp.swift in Sources */,
 				2DFF07D1275297A500A91A15 /* NoteCollectionViewCell.swift in Sources */,
+				B93436172761244C0038C2B3 /* NotebooksViewController.swift in Sources */,
 				2DFF07D427529C5900A91A15 /* Extensions.swift in Sources */,
+				B9F13C23276FA9D000023FBD /* FloatingActionButton.swift in Sources */,
+				B9343612276123840038C2B3 /* NotebookCollectionViewCell.swift in Sources */,
 				B91F6E17275F04850063C1C6 /* SkipSignInView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
