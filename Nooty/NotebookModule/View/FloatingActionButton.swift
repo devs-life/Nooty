@@ -25,7 +25,7 @@ class FloatingActionButton: UIButton {
   }
   private func configureUI(){
     backgroundColor = .systemPurple
-    layer.cornerRadius = 36
+    layer.cornerRadius = 30
     layer.shadowRadius = 4
     layer.shadowOffset = CGSize(width: 0, height: 1)
     layer.shadowColor = UIColor.black.cgColor
@@ -35,7 +35,7 @@ class FloatingActionButton: UIButton {
   private func setupImageView(){
     addSubview(plusImage)
     plusImage.tintColor = .white
-    plusImage.anchorHeightAndWidth(height: nil, heightConstant: 42, heightMultiplier: nil, width: nil, widthConstant: 42, widthMultiplier: nil)
+    plusImage.anchorHeightAndWidth(height: nil, heightConstant: 32, heightMultiplier: nil, width: nil, widthConstant: 32, widthMultiplier: nil)
     plusImage.centerInView(centerX: centerXAnchor, centerY: centerYAnchor)
     
   }
