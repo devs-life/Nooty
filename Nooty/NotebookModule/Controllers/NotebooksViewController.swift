@@ -40,14 +40,14 @@ class NotebooksViewController: UIViewController {
   private func setupCollectionView() {
     notebooksCollectionView.dataSource = self
     notebooksCollectionView.delegate = self
-  
+    
     view.addSubview(notebooksCollectionView)
-    notebooksCollectionView.anchor(left: view.leadingAnchor, top: view.topAnchor, right: view.trailingAnchor, bottom: view.bottomAnchor, paddingLeft: 16, paddingTop: 40, paddingRight: 16, paddingBottom: 0)
+    notebooksCollectionView.anchor(left: view.leadingAnchor, top: view.topAnchor, right: view.trailingAnchor, bottom: view.bottomAnchor, paddingLeft: 10, paddingTop: 44, paddingRight: 10, paddingBottom: 0)
   }
   private func setUpFloatingActionButton(){
     view.addSubview(floatingActionButton)
     floatingActionButton.anchor(left: nil, top: nil, right: view.trailingAnchor, bottom: view.bottomAnchor, paddingLeft: nil, paddingTop: nil, paddingRight: 20, paddingBottom: 20)
-    floatingActionButton.anchorHeightAndWidth(height: nil, heightConstant: 70, heightMultiplier: nil, width: nil, widthConstant: 70, widthMultiplier: nil)
+    floatingActionButton.anchorHeightAndWidth(height: nil, heightConstant: 60, heightMultiplier: nil, width: nil, widthConstant: 60, widthMultiplier: nil)
   }
 }
 
@@ -76,26 +76,26 @@ extension NotebooksViewController: UICollectionViewDataSource, UICollectionViewD
 }
 extension NotebooksViewController {
   
-static func createLayout() -> UICollectionViewLayout {
-          let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                               heightDimension: .fractionalHeight(1.0))
-          let item = NSCollectionLayoutItem(layoutSize: itemSize)
-
-          let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                heightDimension: .absolute(180))
-          let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
-          let spacing = CGFloat(30)
-          group.interItemSpacing = .fixed(spacing)
-
-          let section = NSCollectionLayoutSection(group: group)
-          section.interGroupSpacing = spacing
-
-          // Another way to add spacing. This is done for the section.
-          section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
-
-          let layout = UICollectionViewCompositionalLayout(section: section)
-          return layout
-      }
+  static func createLayout() -> UICollectionViewLayout {
+    let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                          heightDimension: .fractionalHeight(1.0))
+    let item = NSCollectionLayoutItem(layoutSize: itemSize)
+    
+    let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                           heightDimension: .absolute(180))
+    let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+    let spacing = CGFloat(30)
+    group.interItemSpacing = .fixed(spacing)
+    
+    let section = NSCollectionLayoutSection(group: group)
+    section.interGroupSpacing = spacing
+    
+    // Another way to add spacing. This is done for the section.
+    section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
+    
+    let layout = UICollectionViewCompositionalLayout(section: section)
+    return layout
+  }
 }
 
 
