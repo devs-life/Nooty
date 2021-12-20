@@ -9,9 +9,9 @@ import SwiftUI
 
 @main
 struct NootyApp: App {
-    var body: some Scene {
-        WindowGroup {
-          NotesBookControllerView()
-        }
+  var body: some Scene {
+    WindowGroup {
+      NotesBookControllerView()
     }
+  }
 }
