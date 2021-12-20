@@ -60,9 +60,7 @@ class AuthVC: UIViewController {
     
     titleImageView.anchor(left: nil, top: view.safeAreaLayoutGuide.topAnchor, right: nil, bottom: nil, paddingLeft: nil, paddingTop: 90, paddingRight: nil, paddingBottom: nil)
     titleImageView.centerInView(centerX: view.centerXAnchor, centerY: nil)
-    titleImageView.anchorHeightAndWidth(height: view.heightAnchor, heightConstant: nil, heightMultiplier: 0.22, width: nil, widthConstant: 250, widthMultiplier: nil)
-    
-    
+    titleImageView.anchorHeightAndWidth(height: view.heightAnchor, heightConstant: nil, heightMultiplier: 0.22, width: nil, widthConstant: 200, widthMultiplier: nil)    
   }
   
   private func setupTitleLabel(){
@@ -70,7 +68,7 @@ class AuthVC: UIViewController {
     
     titleLabel.anchor(left: nil, top: titleImageView.bottomAnchor, right: nil, bottom: nil, paddingLeft: nil, paddingTop: 10, paddingRight: nil, paddingBottom: nil)
     titleLabel.centerInView(centerX: view.centerXAnchor, centerY: nil)
-    titleImageView.anchorHeightAndWidth(height: nil, heightConstant: 50, heightMultiplier: nil, width: view.widthAnchor, widthConstant: nil, widthMultiplier: 0.4)
+    
   }
   
   private func setupDescLabel(){

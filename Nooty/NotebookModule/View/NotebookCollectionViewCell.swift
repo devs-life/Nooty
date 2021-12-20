@@ -49,7 +49,6 @@ class NotebookCollectionViewCell: UICollectionViewCell {
   private func setupTitleLabel() {
     contentView.addSubview(titleLabel)
     titleLabel.anchor(left: contentView.leadingAnchor, top: nil, right: contentView.trailingAnchor, bottom: contentView.bottomAnchor, paddingLeft: 30, paddingTop: nil, paddingRight: 10, paddingBottom: 20)
-    titleLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
     titleLabel.anchorHeightAndWidth(height: nil, heightConstant: 18, heightMultiplier: nil, width: nil, widthConstant: nil, widthMultiplier: nil)
   }
   
