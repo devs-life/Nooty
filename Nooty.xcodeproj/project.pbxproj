@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D083CC1275F0E1400FAB550 /* Note.swft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D083CC0275F0E1400FAB550 /* Note.swft.swift */; };
-		2D975B292751449E0088D706 /* NootyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D975B282751449E0088D706 /* NootyApp.swift */; };
+		2D0E812A27722BE000F20B9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0E812927722BE000F20B9B /* AppDelegate.swift */; };
 		2D975B2D2751449F0088D706 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D975B2C2751449F0088D706 /* Assets.xcassets */; };
 		2D975B302751449F0088D706 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D975B2F2751449F0088D706 /* Preview Assets.xcassets */; };
 		2D975B37275144C60088D706 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D975B36275144C60088D706 /* NotesViewController.swift */; };
@@ -26,8 +26,9 @@
 /* Begin PBXFileReference section */
 		142DC354CDE399CD5B48BEDA /* Pods-Nooty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nooty.debug.xcconfig"; path = "Target Support Files/Pods-Nooty/Pods-Nooty.debug.xcconfig"; sourceTree = "<group>"; };
 		2D083CC0275F0E1400FAB550 /* Note.swft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swft.swift; sourceTree = "<group>"; };
+		2D0E812927722BE000F20B9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2D0E812D27722CC800F20B9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2D975B252751449E0088D706 /* Nooty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nooty.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D975B282751449E0088D706 /* NootyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NootyApp.swift; sourceTree = "<group>"; };
 		2D975B2C2751449F0088D706 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D975B2F2751449F0088D706 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2D975B36275144C60088D706 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
@@ -87,8 +88,9 @@
 		2D975B272751449E0088D706 /* Nooty */ = {
 			isa = PBXGroup;
 			children = (
+				2D0E812D27722CC800F20B9B /* Info.plist */,
 				B97105DC2753D11C007D5728 /* Nooty.entitlements */,
-				2D975B282751449E0088D706 /* NootyApp.swift */,
+				2D0E812927722BE000F20B9B /* AppDelegate.swift */,
 				B97105D72753CE3C007D5728 /* AuthModule */,
 				B934360F2761233B0038C2B3 /* NotebookModule */,
 				2D6811902752956B00325265 /* NotesModule */,
@@ -330,11 +332,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D0E812A27722BE000F20B9B /* AppDelegate.swift in Sources */,
 				B97105DB2753CE9D007D5728 /* AuthVC.swift in Sources */,
 				2DAF0BFE276047A000CECA4F /* NoteDetailViewController.swift in Sources */,
 				2D975B37275144C60088D706 /* NotesViewController.swift in Sources */,
 				2D083CC1275F0E1400FAB550 /* Note.swft.swift in Sources */,
-				2D975B292751449E0088D706 /* NootyApp.swift in Sources */,
 				2DFF07D1275297A500A91A15 /* NoteCollectionViewCell.swift in Sources */,
 				B93436172761244C0038C2B3 /* NotebooksViewController.swift in Sources */,
 				2DFF07D427529C5900A91A15 /* Extensions.swift in Sources */,
@@ -476,7 +478,7 @@
 				DEVELOPMENT_TEAM = Q659HB4U5Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = Nooty/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -507,7 +509,7 @@
 				DEVELOPMENT_TEAM = Q659HB4U5Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = Nooty/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
