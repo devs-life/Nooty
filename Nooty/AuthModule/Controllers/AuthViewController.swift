@@ -9,9 +9,8 @@ import UIKit
 import SwiftUI
 import AuthenticationServices
 
+class AuthViewController: UIViewController {
 
-class AuthVC: UIViewController {
-  
   let titleLabel: UILabel = {
     let label = UILabel()
     label.text = "Nooty App"
@@ -60,7 +59,7 @@ class AuthVC: UIViewController {
     
     titleImageView.anchor(left: nil, top: view.safeAreaLayoutGuide.topAnchor, right: nil, bottom: nil, paddingLeft: nil, paddingTop: 90, paddingRight: nil, paddingBottom: nil)
     titleImageView.centerInView(centerX: view.centerXAnchor, centerY: nil)
-    titleImageView.anchorHeightAndWidth(height: view.heightAnchor, heightConstant: nil, heightMultiplier: 0.22, width: nil, widthConstant: 200, widthMultiplier: nil)    
+    titleImageView.anchorHeightAndWidth(height: view.heightAnchor, heightConstant: nil, heightMultiplier: 0.22, width: nil, widthConstant: 200, widthMultiplier: nil)
   }
   
   private func setupTitleLabel(){
@@ -89,16 +88,16 @@ class AuthVC: UIViewController {
     appleSignInBtn.addTarget(self, action: #selector(actionHandleAppleSignin), for: .touchUpInside)
     
   }
+  
   private func setupSkipSignInView(){
     view.addSubview(skipSignInView)
     skipSignInView.anchor(left: nil, top: appleSignInBtn.bottomAnchor, right: nil, bottom: nil, paddingLeft: nil, paddingTop: 20, paddingRight: nil, paddingBottom: nil)
     
     skipSignInView.anchorHeightAndWidth(height: nil, heightConstant: 40, heightMultiplier: nil, width: nil, widthConstant: 250, widthMultiplier: nil)
     skipSignInView.centerXAnchor.constraint(equalTo: appleSignInBtn.centerXAnchor).isActive = true
-    
   }
   
-  @objc func actionHandleAppleSignin() {
+  @objc private func actionHandleAppleSignin() {
     let appleIDProvider = ASAuthorizationAppleIDProvider()
     let request = appleIDProvider.createRequest()
     request.requestedScopes = [.fullName, .email]
@@ -108,61 +107,70 @@ class AuthVC: UIViewController {
     authorizationController.performRequests()
   }
   
+  private func saveToUserDefaults(
+    token: String?,
+    userId: String?,
+    email: String?,
+    fullName: String?
+  ) {
+    UserDefaults.standard.set(token, forKey: UserDefaultKeys.tokenKey)
+    UserDefaults.standard.set(userId, forKey: UserDefaultKeys.userIdKey)
+    UserDefaults.standard.set(email, forKey: UserDefaultKeys.userEmailKey)
+    UserDefaults.standard.set(fullName, forKey: UserDefaultKeys.userFullName)
+  }
+  
+  private func presentNotebooksViewController() {
+    let vc = NotebooksViewController()
+    vc.modalPresentationStyle = .fullScreen
+    present(vc, animated: true)
+  }
   
 }
-extension AuthVC: ASAuthorizationControllerDelegate {
+extension AuthViewController: ASAuthorizationControllerDelegate {
   
   // ASAuthorizationControllerDelegate function for authorization failed
   
   func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-    
     print(error.localizedDescription)
-    
   }
+  
   func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+    
     if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
       guard let appleIDToken = appleIDCredential.identityToken else {
         print("Unable to fetch identity token")
         return
       }
       
-      guard let idTokenString = String(data: appleIDToken, encoding: .utf8) else {
+      guard let token = String(data: appleIDToken, encoding: .utf8) else {
         print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
         return
       }
       
-      
-      let userIdentifier = appleIDCredential.user
-      let fullName = appleIDCredential.fullName
+      let userId = appleIDCredential.user
       let email = appleIDCredential.email
-      
-      print(idTokenString)
-      print(userIdentifier)
-      print(fullName)
-      print(email)
+      let givenName = appleIDCredential.fullName?.givenName ?? ""
+      let familyName = appleIDCredential.fullName?.familyName ?? ""
+      let fullNameString = givenName + " " + familyName
+      saveToUserDefaults(token: token, userId: userId, email: email, fullName: fullNameString)
+      presentNotebooksViewController()
     }
   }
-  
-  
 }
 
-extension AuthVC: ASAuthorizationControllerPresentationContextProviding {
+extension AuthViewController: ASAuthorizationControllerPresentationContextProviding {
   
   //For present window
-  
   func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-    
     return self.view.window!
-    
   }
-  
 }
 
 #if DEBUG
 struct AuthIntegratedController: UIViewControllerRepresentable {
   
   func makeUIViewController(context: Context) -> UIViewController {
-    return AuthVC()
+    return AuthViewController()
   }
   
   func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
