@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2D083CC1275F0E1400FAB550 /* Note.swft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D083CC0275F0E1400FAB550 /* Note.swft.swift */; };
 		2D0E812A27722BE000F20B9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0E812927722BE000F20B9B /* AppDelegate.swift */; };
+		2D30458E277410FC00A9B7B7 /* UserDefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D30458D277410FC00A9B7B7 /* UserDefaultKeys.swift */; };
 		2D975B2D2751449F0088D706 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D975B2C2751449F0088D706 /* Assets.xcassets */; };
 		2D975B302751449F0088D706 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D975B2F2751449F0088D706 /* Preview Assets.xcassets */; };
 		2D975B37275144C60088D706 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D975B36275144C60088D706 /* NotesViewController.swift */; };
@@ -19,7 +20,7 @@
 		B91F6E17275F04850063C1C6 /* SkipSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F6E16275F04850063C1C6 /* SkipSignInView.swift */; };
 		B9343612276123840038C2B3 /* NotebookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9343611276123840038C2B3 /* NotebookCollectionViewCell.swift */; };
 		B93436172761244C0038C2B3 /* NotebooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93436162761244C0038C2B3 /* NotebooksViewController.swift */; };
-		B97105DB2753CE9D007D5728 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97105DA2753CE9D007D5728 /* AuthVC.swift */; };
+		B97105DB2753CE9D007D5728 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97105DA2753CE9D007D5728 /* AuthViewController.swift */; };
 		B9F13C23276FA9D000023FBD /* FloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F13C22276FA9D000023FBD /* FloatingActionButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		2D083CC0275F0E1400FAB550 /* Note.swft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swft.swift; sourceTree = "<group>"; };
 		2D0E812927722BE000F20B9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D0E812D27722CC800F20B9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2D30458D277410FC00A9B7B7 /* UserDefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeys.swift; sourceTree = "<group>"; };
 		2D975B252751449E0088D706 /* Nooty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nooty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D975B2C2751449F0088D706 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D975B2F2751449F0088D706 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -38,7 +40,7 @@
 		B91F6E16275F04850063C1C6 /* SkipSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipSignInView.swift; sourceTree = "<group>"; };
 		B9343611276123840038C2B3 /* NotebookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookCollectionViewCell.swift; sourceTree = "<group>"; };
 		B93436162761244C0038C2B3 /* NotebooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebooksViewController.swift; sourceTree = "<group>"; };
-		B97105DA2753CE9D007D5728 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
+		B97105DA2753CE9D007D5728 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		B97105DC2753D11C007D5728 /* Nooty.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nooty.entitlements; sourceTree = "<group>"; };
 		B9F13C22276FA9D000023FBD /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
 		D85583562AB4AE6E923842EB /* Pods-Nooty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nooty.release.xcconfig"; path = "Target Support Files/Pods-Nooty/Pods-Nooty.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				2DFF07D327529C5900A91A15 /* Extensions.swift */,
+				2D30458D277410FC00A9B7B7 /* UserDefaultKeys.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -213,7 +216,7 @@
 		B97105D92753CE52007D5728 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B97105DA2753CE9D007D5728 /* AuthVC.swift */,
+				B97105DA2753CE9D007D5728 /* AuthViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -333,13 +336,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D0E812A27722BE000F20B9B /* AppDelegate.swift in Sources */,
-				B97105DB2753CE9D007D5728 /* AuthVC.swift in Sources */,
+				B97105DB2753CE9D007D5728 /* AuthViewController.swift in Sources */,
 				2DAF0BFE276047A000CECA4F /* NoteDetailViewController.swift in Sources */,
 				2D975B37275144C60088D706 /* NotesViewController.swift in Sources */,
 				2D083CC1275F0E1400FAB550 /* Note.swft.swift in Sources */,
 				2DFF07D1275297A500A91A15 /* NoteCollectionViewCell.swift in Sources */,
 				B93436172761244C0038C2B3 /* NotebooksViewController.swift in Sources */,
 				2DFF07D427529C5900A91A15 /* Extensions.swift in Sources */,
+				2D30458E277410FC00A9B7B7 /* UserDefaultKeys.swift in Sources */,
 				B9F13C23276FA9D000023FBD /* FloatingActionButton.swift in Sources */,
 				B9343612276123840038C2B3 /* NotebookCollectionViewCell.swift in Sources */,
 				B91F6E17275F04850063C1C6 /* SkipSignInView.swift in Sources */,
@@ -479,10 +483,15 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nooty/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Nooty;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -510,10 +519,15 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nooty/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Nooty;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
