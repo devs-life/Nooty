@@ -7,12 +7,18 @@
 
 import UIKit
 
+protocol SkipSignInViewDelegate {
+  
+  func navigateToNotebooks()
+}
+
 class SkipSignInView: UIView {
   
   override init(frame: CGRect) {
     super.init(frame: frame)
     configureUI()
   }
+  var delegate: SkipSignInViewDelegate?
   
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
@@ -33,6 +39,8 @@ class SkipSignInView: UIView {
     skipBtn.anchorHeightAndWidth(height: nil, heightConstant: 16, heightMultiplier: nil, width: nil, widthConstant: nil, widthMultiplier: nil)
     skipBtn.anchor(left: skipLabel.trailingAnchor, top: topAnchor, right: trailingAnchor, bottom: nil, paddingLeft: -15, paddingTop: 12, paddingRight: 0, paddingBottom: nil)
     
+    skipBtn.addTarget(self, action: #selector(skipButtonChicked), for: .touchUpInside)
+    
     let attributes: [NSAttributedString.Key: Any] = [
       .font: UIFont.systemFont(ofSize: 14),
       .foregroundColor: UIColor.label,
@@ -43,6 +51,15 @@ class SkipSignInView: UIView {
       attributes: attributes)
     skipBtn.setAttributedTitle(attributeString, for: .normal)
     skipBtn.setTitleColor(.label, for: .normal)
+  }
+  
+  @objc func skipButtonChicked(){
+    
+    guard let delegate = self.delegate else {
+      return
+    }
+
+    delegate.navigateToNotebooks()
   }
   
 }

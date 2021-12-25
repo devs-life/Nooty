@@ -17,6 +17,7 @@ class NoteDetailViewController: UIViewController {
     textView.text = "Your Note here..."
     textView.textColor = UIColor.lightGray
     textView.textContainerInset = UIEdgeInsets(top: 4, left: 0, bottom: 4, right: 0)
+    textView.isScrollEnabled = false
     return textView
   }()
   
@@ -36,6 +37,25 @@ class NoteDetailViewController: UIViewController {
     return view
   }()
   
+  var extraHeight: CGFloat = 100
+  
+  lazy var contentViewSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + extraHeight)
+  
+  lazy var scrollView: UIScrollView = {
+      let sView = UIScrollView(frame: .zero)
+      sView.backgroundColor = .white
+      sView.frame = self.view.bounds
+      sView.contentSize = contentViewSize
+      return sView
+  }()
+  
+  lazy var containerView: UIView = {
+      let view = UIView()
+      view.frame.size = contentViewSize
+      view.backgroundColor = .white
+      return view
+  }()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
@@ -45,10 +65,16 @@ class NoteDetailViewController: UIViewController {
     view.backgroundColor = .systemBackground
     navigationController?.navigationBar.prefersLargeTitles = false
     navigationController?.navigationBar.tintColor = UIColor.systemPurple
+    setupScrollView()
     setupMoreButton()
     setupSeperatorView()
     setuptTitleField()
     setupTextView()
+  }
+  
+  private func setupScrollView() {
+      view.addSubview(scrollView)
+      scrollView.addSubview(containerView)
   }
   
   private func setupMoreButton() {
@@ -64,19 +90,19 @@ class NoteDetailViewController: UIViewController {
   }
   
   private func setupSeperatorView() {
-    view.addSubview(seperatorView)
+    containerView.addSubview(seperatorView)
     
-    seperatorView.anchor(left: view.leadingAnchor, top: view.safeAreaLayoutGuide.topAnchor, right: nil, bottom: nil, paddingLeft: 10, paddingTop: 10, paddingRight: 0, paddingBottom: 0)
+    seperatorView.anchor(left: containerView.leadingAnchor, top: containerView.safeAreaLayoutGuide.topAnchor, right: nil, bottom: nil, paddingLeft: 10, paddingTop: 10, paddingRight: 0, paddingBottom: 0)
     seperatorView.anchorHeightAndWidth(height: nil, heightConstant: 50, heightMultiplier: nil, width: nil, widthConstant: 4, widthMultiplier: nil)
   }
   
   private func setuptTitleField() {
-    view.addSubview(titleField)
+    containerView.addSubview(titleField)
     titleField.centerInView(centerX: nil, centerY: seperatorView.centerYAnchor)
     titleField.anchor(
       left: seperatorView.trailingAnchor,
       top: nil,
-      right: view.trailingAnchor,
+      right: containerView.trailingAnchor,
       bottom: nil,
       paddingLeft: 10,
       paddingTop: 0,
@@ -86,13 +112,13 @@ class NoteDetailViewController: UIViewController {
   }
   
   private func setupTextView() {
-    view.addSubview(textView)
+    containerView.addSubview(textView)
     
     textView.anchor(
-      left: view.leadingAnchor,
+      left: containerView.leadingAnchor,
       top: seperatorView.bottomAnchor,
-      right: view.trailingAnchor,
-      bottom: view.bottomAnchor,
+      right: containerView.trailingAnchor,
+      bottom: containerView.bottomAnchor,
       paddingLeft: 15,
       paddingTop: 10,
       paddingRight: 8,
@@ -124,6 +150,7 @@ extension NoteDetailViewController: UITextViewDelegate {
           textView.textColor = UIColor.lightGray
       }
   }
+  
 }
 
 /// SwiftUI Previews

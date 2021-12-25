@@ -23,7 +23,8 @@ class NotebookCollectionViewCell: UICollectionViewCell {
     let imageView = UIImageView()
     imageView.contentMode = .scaleAspectFill
     imageView.clipsToBounds = true
-    imageView.image = UIImage(named: "notebook")
+    imageView.image = UIImage(systemName: "books.vertical.circle.fill")
+    imageView.tintColor = .systemCyan
     return imageView
   }()
    
