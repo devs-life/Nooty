@@ -43,7 +43,7 @@ class NoteDetailViewController: UIViewController {
   
   lazy var scrollView: UIScrollView = {
       let sView = UIScrollView(frame: .zero)
-      sView.backgroundColor = .white
+      sView.backgroundColor = .systemBackground
       sView.frame = self.view.bounds
       sView.contentSize = contentViewSize
       return sView
@@ -52,7 +52,7 @@ class NoteDetailViewController: UIViewController {
   lazy var containerView: UIView = {
       let view = UIView()
       view.frame.size = contentViewSize
-      view.backgroundColor = .white
+      view.backgroundColor = .systemBackground
       return view
   }()
   

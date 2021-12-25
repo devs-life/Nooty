@@ -14,6 +14,7 @@
 		2D975B302751449F0088D706 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D975B2F2751449F0088D706 /* Preview Assets.xcassets */; };
 		2D975B37275144C60088D706 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D975B36275144C60088D706 /* NotesViewController.swift */; };
 		2DAF0BFE276047A000CECA4F /* NoteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAF0BFD276047A000CECA4F /* NoteDetailViewController.swift */; };
+		2DDC2C512776CA9200979FB9 /* MoreDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC2C502776CA9200979FB9 /* MoreDetailsViewController.swift */; };
 		2DFF07D1275297A500A91A15 /* NoteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF07D0275297A500A91A15 /* NoteCollectionViewCell.swift */; };
 		2DFF07D427529C5900A91A15 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF07D327529C5900A91A15 /* Extensions.swift */; };
 		A3ECA278DE9C5E61460C808E /* Pods_Nooty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBBF14804DA7D51695FBE69 /* Pods_Nooty.framework */; };
@@ -35,6 +36,7 @@
 		2D975B2F2751449F0088D706 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2D975B36275144C60088D706 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		2DAF0BFD276047A000CECA4F /* NoteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailViewController.swift; sourceTree = "<group>"; };
+		2DDC2C502776CA9200979FB9 /* MoreDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailsViewController.swift; sourceTree = "<group>"; };
 		2DFF07D0275297A500A91A15 /* NoteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionViewCell.swift; sourceTree = "<group>"; };
 		2DFF07D327529C5900A91A15 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B91F6E16275F04850063C1C6 /* SkipSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipSignInView.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			children = (
 				2D975B36275144C60088D706 /* NotesViewController.swift */,
 				2DAF0BFD276047A000CECA4F /* NoteDetailViewController.swift */,
+				2DDC2C502776CA9200979FB9 /* MoreDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				2D975B37275144C60088D706 /* NotesViewController.swift in Sources */,
 				2D083CC1275F0E1400FAB550 /* Note.swft.swift in Sources */,
 				2DFF07D1275297A500A91A15 /* NoteCollectionViewCell.swift in Sources */,
+				2DDC2C512776CA9200979FB9 /* MoreDetailsViewController.swift in Sources */,
 				B93436172761244C0038C2B3 /* NotebooksViewController.swift in Sources */,
 				2DFF07D427529C5900A91A15 /* Extensions.swift in Sources */,
 				2D30458E277410FC00A9B7B7 /* UserDefaultKeys.swift in Sources */,
