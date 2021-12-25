@@ -95,6 +95,7 @@ class AuthViewController: UIViewController {
     
     skipSignInView.anchorHeightAndWidth(height: nil, heightConstant: 40, heightMultiplier: nil, width: nil, widthConstant: 250, widthMultiplier: nil)
     skipSignInView.centerXAnchor.constraint(equalTo: appleSignInBtn.centerXAnchor).isActive = true
+    skipSignInView.delegate = self
   }
   
   @objc private func actionHandleAppleSignin() {
@@ -121,8 +122,9 @@ class AuthViewController: UIViewController {
   
   private func presentNotebooksViewController() {
     let vc = NotebooksViewController()
-    vc.modalPresentationStyle = .fullScreen
-    present(vc, animated: true)
+    let navVC = UINavigationController(rootViewController: vc)
+    navVC.modalPresentationStyle = .fullScreen
+    present(navVC, animated: true)
   }
   
 }
@@ -156,6 +158,14 @@ extension AuthViewController: ASAuthorizationControllerDelegate {
       presentNotebooksViewController()
     }
   }
+}
+
+extension AuthViewController: SkipSignInViewDelegate {
+  func navigateToNotebooks() {
+    self.presentNotebooksViewController()
+  }
+  
+  
 }
 
 extension AuthViewController: ASAuthorizationControllerPresentationContextProviding {
