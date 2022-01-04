@@ -35,6 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     } else {
       showLoginViewController()
     }
+    window?.rootViewController = UINavigationController(rootViewController: NoteDetailViewController())
+    window?.makeKeyAndVisible()
     return true
   }
   

@@ -11,9 +11,11 @@ class MoreDetailsViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    setupView()
   }
   
   private func setupView() {
-    
+    view.backgroundColor = .init(named: "lightBlack")
   }
+  
 }

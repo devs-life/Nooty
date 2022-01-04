@@ -131,7 +131,16 @@ class NoteDetailViewController: UIViewController {
   /// Logic:-
   
   @objc private func moreAction() {
-    print("morePressed")
+    let moreDetailsViewController = MoreDetailsViewController()
+    if let sheet = moreDetailsViewController.sheetPresentationController {
+      sheet.detents = [.medium(), .large()]
+      sheet.prefersScrollingExpandsWhenScrolledToEdge = true
+      sheet.prefersEdgeAttachedInCompactHeight = true
+      sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
+      sheet.prefersGrabberVisible = true
+      sheet.preferredCornerRadius = 30
+    }
+    present(moreDetailsViewController, animated: true, completion: nil)
   }
   
 }
